@@ -1,3 +1,5 @@
+const expect = require("./utils").expect;
+
 /**
  * 解法1 时间复杂度 O(n²)
  * @param {number[]} nums
@@ -38,8 +40,7 @@ const test1Target = 9;
 const test2Nums = [3, 3, 2];
 const test2Target = 6;
 
-console.log(towSum(test1Nums, test1Target).toString() === "0,1");
-console.log(towSum(test2Nums, test2Target).toString() === "0,1");
-
-console.log(towSumBetter(test1Nums, test1Target).toString() === "0,1");
-console.log(towSumBetter(test2Nums, test2Target).toString() === "0,1");
+[towSum, towSumBetter].forEach(cb => {
+  console.log(expect(cb(test1Nums, test1Target)).isEqual([0, 1]));
+  console.log(expect(cb(test2Nums, test2Target)).isEqual([0, 1]));
+});
