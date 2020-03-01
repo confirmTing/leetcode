@@ -84,11 +84,11 @@ const t1k = 3;
 const t2Arr = [-1];
 const t2k = 2;
 
-[rotate, rotate2, rotate3, rotate4].forEach((cb) => {
+[rotate, rotate2, rotate3, rotate4].forEach(cb => {
   const t1 = [...t1Arr];
   const t2 = [...t2Arr];
   cb(t1, t1k);
   cb(t2, t2k);
-  console.log(expect(t1).isEqual([5, 6, 7, 1, 2, 3, 4]))
-  console.log(expect(t2).isEqual([-1]))
-})
+  expect(t1).isEqual([5, 6, 7, 1, 2, 3, 4]);
+  expect(t2).isEqual([-1]);
+});

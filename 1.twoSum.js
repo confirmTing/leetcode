@@ -41,6 +41,6 @@ const test2Nums = [3, 3, 2];
 const test2Target = 6;
 
 [towSum, towSumBetter].forEach(cb => {
-  console.log(expect(cb(test1Nums, test1Target)).isEqual([0, 1]));
-  console.log(expect(cb(test2Nums, test2Target)).isEqual([0, 1]));
+  expect(cb(test1Nums, test1Target)).isEqual([0, 1]);
+  expect(cb(test2Nums, test2Target)).isEqual([0, 1]);
 });

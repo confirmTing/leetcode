@@ -38,9 +38,7 @@ var threeSum = function(nums) {
 
 var t1 = [-1, 0, 1, 2, -1, -4];
 
-console.log(
-  expect(threeSum(t1)).isEqual([
-    [-1, -1, 2],
-    [-1, 0, 1]
-  ])
-);
+expect(threeSum(t1)).isEqual([
+  [-1, -1, 2],
+  [-1, 0, 1]
+]);

@@ -13,7 +13,7 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(numbers, target) {
+var twoSum1 = function(numbers, target) {
   for (let i = 0; i < numbers.length; i++) {
     let j = i + 1;
     while (numbers[j] <= target - numbers[i]) {
@@ -34,19 +34,21 @@ var twoSum = function(numbers, target) {
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(numbers, target) {
+function twoSum(numbers, target) {
   let i = 0;
   let j = numbers.length - 1;
 
   while (i < j) {
     const sum = numbers[i] + numbers[j];
-    if (sum < target) {
-      i++;
-    } else if (sum > target) {
-      j--;
-    } else {
+
+    if (sum === target) {
       return [i + 1, j + 1];
+    } else if (sum < target) {
+      i++;
+    } else {
+      j--;
     }
   }
-};
+}
+
 // @lc code=end
