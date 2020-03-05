@@ -20,8 +20,8 @@ class Jest {
     } else {
       console.log(
         `false:
-        expect: ${JSON.stringify(this.value)}
-        got: ${JSON.stringify(value)}`
+        expect: ${JSON.stringify(value)}
+        got: ${JSON.stringify(this.value)}`
       );
     }
   }
