@@ -7,6 +7,8 @@ const expect = require("./utils").expect;
  */
 
 /**
+ * time complexity O(n)
+ * space complexity O(1)
  * @param {string} S
  * @return {string}
  */
@@ -28,6 +30,43 @@ var compressString = function(S) {
   str += ch + count.toString();
 
   return str.length >= S.length ? S : str;
+};
+
+/**
+ * time complexity O(n)
+ * space complexity O(1)
+ * @param {string} S
+ * @return {string}
+ */
+var compressString = function(S) {
+  const reg = /([a-z])\1{0,}/g;
+  let res;
+  let ans = "";
+
+  while ((res = reg.exec(S))) {
+    ans += res[1] + res[0].length;
+  }
+
+  return ans.length >= S.length ? S : ans;
+};
+
+/**
+ * time complexity O(n)
+ * space complexity O(1)
+ * @param {string} S
+ * @return {string}
+ */
+var compressString = function(S) {
+  const reg = /([a-z])\1{0,}/g;
+  let ans = "";
+
+  const ansArr = S.match(reg);
+
+  for (let i = 0; i < ansArr.length; i++) {
+    ans += ansArr[i][0] + ansArr[i].length;
+  }
+
+  return ans.length >= S.length ? S : ans;
 };
 
 expect(compressString("aabcccccaa")).isEqual("a2b1c5a2");
