@@ -24,7 +24,7 @@ var diameterOfBinaryTree = function(root) {
     const l = depth(node.left); // 获取左节点最大直径
     const r = depth(node.right); // 获取右节点最大直径
     res = Math.max(res, l + r);
-    return Math.max(l, r) + 1; // 最大深度
+    return Math.max(l, r) + 1; // 只要左边或者右边的最大深度
   };
   depth(root);
   return res;
