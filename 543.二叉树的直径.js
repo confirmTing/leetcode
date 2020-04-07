@@ -16,10 +16,10 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var diameterOfBinaryTree = function(root) {
+var diameterOfBinaryTree = function (root) {
   var res = 0;
 
-  const depth = function(node) {
+  const depth = function (node) {
     if (!node) return 0; // 空节点返回 0
     const l = depth(node.left); // 获取左节点最大直径
     const r = depth(node.right); // 获取右节点最大直径
