@@ -28,7 +28,7 @@ var isSymmetric = function (root) {
     );
   };
 
-  return isMirror(root, root)
+  return isMirror(root, root);
 };
 
 /**
