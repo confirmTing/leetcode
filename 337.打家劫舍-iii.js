@@ -17,7 +17,7 @@
  * @param {TreeNode} root
  * @return {number}
  */
-var rob = function(root) {
+var rob = function (root) {
   if (!root) return 0;
 
   let money = 0;
@@ -38,7 +38,7 @@ var rob = function(root) {
  * @param {TreeNode} root
  * @return {number}
  */
-var rob = function(root) {
+var rob = function (root) {
   if (!root) return 0;
 
   let money = 0;
@@ -64,14 +64,14 @@ var rob = function(root) {
  * @param {TreeNode} root
  * @return {number}
  */
-var rob = function(root) {
-  const robExclude = node => {
+var rob = function (root) {
+  const robExclude = (node) => {
     if (!node) return 0;
 
     return rob(node.left) + rob(node.right);
   };
 
-  const robInclude = node => {
+  const robInclude = (node) => {
     if (!node) return 0;
     return robExclude(node.left) + robExclude(node.right) + node.val;
   };
@@ -86,8 +86,8 @@ var rob = function(root) {
  * @param {TreeNode} root
  * @return {number}
  */
-var rob = function(root) {
-  const robSub = node => {
+var rob = function (root) {
+  const robSub = (node) => {
     // the first denotes root not robbed
     // the second denotes root is robbed
     const res = [0, 0];
@@ -106,6 +106,28 @@ var rob = function(root) {
   const res = robSub(root);
 
   return Math.max(...res);
+};
+
+/**
+ * 递归，比较爷爷+四个孙子的钱 和 两个爸爸的钱哪个多
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var rob = function (root) {
+  const robSub = node => {
+    const res=  [0, 0];
+
+    if (!node) return res;
+
+    const left = robSub(node.left);
+    const right = robSub(node.right);
+
+    res[0] = Math.max(left[0], left[1]) + Math.max(right[0], right[1]);
+    res[1] = node.val + left[0] + right[0];
+    return res;
+  }
+
+  return Math.max(...robSub(root));
 };
 
 // @lc code=end

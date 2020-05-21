@@ -11,7 +11,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var rob = function(nums) {
+var rob = function (nums) {
   if (!nums || nums.length < 1) return 0;
   if (nums.length < 3) return Math.max(...nums);
 
@@ -19,7 +19,7 @@ var rob = function(nums) {
     let preMax = 0;
     let currentMax = 0;
 
-    nums.forEach(num => {
+    nums.forEach((num) => {
       const temp = currentMax;
       currentMax = Math.max(preMax + num, currentMax);
       preMax = temp;
