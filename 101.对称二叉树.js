@@ -36,7 +36,8 @@ var isSymmetric = function (root) {
  * @return {boolean}
  */
 var isSymmetric = function (root) {
-  const queue = [root, root];
+  if (!root) return true;
+  const queue = [root.left, root.right];
 
   while (queue.length > 0) {
     const t1 = queue.shift();
@@ -45,12 +46,9 @@ var isSymmetric = function (root) {
     if (t1 === null && t2 === null) continue;
     if (t1 === null || t2 === null) return false;
     if (t1.val !== t2.val) return false;
-    queue.push(t1.left);
-    queue.push(t2.right);
-    queue.push(t1.right);
-    queue.push(t2.left);
+    queue.push(t1.left, t2.right, t1.right, t2.left);
   }
 
   return true;
-}
+};
 // @lc code=end

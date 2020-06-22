@@ -16,7 +16,7 @@
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function(root) {
+var invertTree = function (root) {
   if (root === null) return null;
 
   const left = invertTree(root.left);
@@ -32,10 +32,10 @@ var invertTree = function(root) {
  * @param {TreeNode} root
  * @return {TreeNode}
  */
-var invertTree = function(root) {
+var invertTree = function (root) {
   const queue = [root];
 
-  while(queue.length > 0) {
+  while (queue.length > 0) {
     const t1 = queue.shift();
     if (t1 === null) continue;
 
@@ -46,5 +46,5 @@ var invertTree = function(root) {
     queue.push(t1.left, t1.right);
   }
   return root;
-}
+};
 // @lc code=end

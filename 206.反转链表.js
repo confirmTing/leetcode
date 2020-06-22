@@ -41,7 +41,7 @@ var reverseList = function (head) {
 
   // 2 -> 3 . next = 2
   head.next.next = head;
-  // 防止链表循环
+  // 防止链表循环 2 -> 3 -> 2
   head.next = null;
   // 返回最后一个元素
   return p;
