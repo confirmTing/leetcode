@@ -11,7 +11,7 @@
  * @param {number[]} rec2
  * @return {boolean}
  */
-var isRectangleOverlap = function(rec1, rec2) {
+var isRectangleOverlap = function (rec1, rec2) {
   // 取左边的最大值
   const x1 = Math.max(rec1[0], rec2[0]);
   // 取上边的最大值
@@ -34,7 +34,7 @@ var isRectangleOverlap = function(rec1, rec2) {
  * @param {number[]} rec2
  * @return {boolean}
  */
-var isRectangleOverlap = function(rec1, rec2) {
+var isRectangleOverlap = function (rec1, rec2) {
   // 对矩形进行压平，投影
   // 当 x1，x2 没有交集的时候肯定是没有重合区域的
   // 对其进行取反操作

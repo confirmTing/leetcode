@@ -19,7 +19,7 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var middleNode = function(head) {
+var middleNode = function (head) {
   const arr = [head];
   let current = head;
 
@@ -38,7 +38,7 @@ var middleNode = function(head) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-var middleNode = function(head) {
+var middleNode = function (head) {
   let slow = head;
   let fast = head;
 
@@ -57,7 +57,7 @@ var middleNode = function(head) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-var middleNode = function(head) {
+var middleNode = function (head) {
   let count = 0;
   let current = head;
 

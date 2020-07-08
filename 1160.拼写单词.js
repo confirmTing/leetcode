@@ -14,7 +14,7 @@
  * @param {string} chars
  * @return {number}
  */
-var countCharacters = function(words, chars) {
+var countCharacters = function (words, chars) {
   function getCharCount(map, chars) {
     for (let i = 0; i < chars.length; i++) {
       map[chars[i]] = (map[chars[i]] || 0) + 1;
@@ -53,7 +53,7 @@ var countCharacters = function(words, chars) {
  * @param {string} chars
  * @return {number}
  */
-var countCharacters = function(words, chars) {
+var countCharacters = function (words, chars) {
   const codeA = "a".charCodeAt();
   function getCharsCount(chars) {
     const arr = [];
@@ -67,7 +67,7 @@ var countCharacters = function(words, chars) {
   let arrChars = getCharsCount(chars);
   let count = 0;
 
-  words.forEach(word => {
+  words.forEach((word) => {
     const arrWord = getCharsCount(word);
 
     let ans = true;

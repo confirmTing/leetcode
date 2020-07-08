@@ -17,12 +17,12 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var rightSideView = function(root) {
+var rightSideView = function (root) {
   const queue = [root];
   const res = [];
   if (root === null) return res;
 
-  while(queue.length > 0) {
+  while (queue.length > 0) {
     const len = queue.length;
 
     for (let i = 0; i < len; i++) {
@@ -35,8 +35,8 @@ var rightSideView = function(root) {
         queue.push(node.right);
       }
 
-      if (i === len -1) {
-        res.push(node.val)
+      if (i === len - 1) {
+        res.push(node.val);
       }
     }
   }
@@ -49,21 +49,21 @@ var rightSideView = function(root) {
  * @param {TreeNode} root
  * @return {number[]}
  */
-var rightSideView = function(root) {
+var rightSideView = function (root) {
   const res = [];
 
   const dfs = (node, depth) => {
     if (!node) return;
 
     if (depth === res.length) {
-      res.push(node.val)
+      res.push(node.val);
     }
     depth += 1;
     dfs(node.right, depth);
     dfs(node.left, depth);
-  }
+  };
 
   dfs(root, 0);
   return res;
-}
+};
 // @lc code=end

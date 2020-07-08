@@ -6,6 +6,8 @@
 
 // @lc code=start
 /**
+ * time complexity O(N)
+ * space complexity O(1)
  * @param {number[]} height
  * @return {number}
  */

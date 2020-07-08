@@ -11,7 +11,7 @@
  * @param {number[]} A
  * @return {boolean}
  */
-var canThreePartsEqualSum = function(A) {
+var canThreePartsEqualSum = function (A) {
   const sum = A.reduce((prev, item) => prev + item, 0);
   if (sum % 3 !== 0) return false; // 不能被3整除返回 false
   let len = A.length;
@@ -41,4 +41,5 @@ var canThreePartsEqualSum = function(A) {
   // 未找到 返回 false
   return false;
 };
+
 // @lc code=end

@@ -39,13 +39,13 @@ var maximumProduct = function (nums) {
     } else if (num > max[1]) {
       max = [max[1], num, max[2]];
     } else if (num > max[0]) {
-      max = [num, max[1], max[2]]
+      max = [num, max[1], max[2]];
     }
 
     if (num < min[0]) {
-      min = [num, min[0]]
+      min = [num, min[0]];
     } else if (num < min[1]) {
-      min = [min[0], num]
+      min = [min[0], num];
     }
   });
 

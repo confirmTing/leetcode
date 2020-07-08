@@ -45,7 +45,7 @@ var reverseList = function (head) {
   head.next = null;
   // 返回最后一个元素
   return p;
-}
+};
 // @lc code=end
 
 // const linkList = {
